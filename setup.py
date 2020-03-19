@@ -4,6 +4,7 @@ setup(
     packages=['jsonnet_docblock_parser'],
     version='0.1.0',
     license='MIT',
+    scripts=['scripts/jdp'],
     description='Simple, powerfull jsonnet docblock parser that returns a JSON representation to work with.',
     author='Levi Govaerts',
     author_email='legovaer@me.com',

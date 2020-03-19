@@ -119,7 +119,7 @@ disable=
     too-many-branches,
     too-many-statements,
     duplicate-code,
-
+    too-many-instance-attributes,
 
 [REPORTS]
 

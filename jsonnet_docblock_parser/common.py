@@ -74,7 +74,6 @@ class Docblock:
     self.returns = None
     self.start_line = None
     self.end_line = None
-    self.file = None
 
   def add_param(self, param):
     """Add a parameter to the metadata of this docblock."""
@@ -96,7 +95,6 @@ class Docblock:
         'long_description': self.long_description,
         'code': self.code,
         'params': [],
-        'file': self.file,
         'start_line': self.start_line,
         'end_line': self.end_line,
     }

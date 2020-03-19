@@ -94,7 +94,7 @@ def parseDocblock(lines, start_line, end_line, file) -> Docblock:
   return docblock
 
 def _extract_long_description(lines, start_line, abs_current_line):
-  current_line = start_line + 1 
+  current_line = start_line + 1
   result = ""
   while current_line < abs_current_line:
     result = result + re.sub(PATTERNS["docblock"], "\n", lines[current_line])
@@ -136,8 +136,10 @@ def parseFile(file: str):
     sys.exit(1)
 
   lines = file_content.splitlines()
-
-  results = []
+  results = {
+      "docblocks": [],
+      "file": file,
+  }
 
   start_line = 0
   end_line = 0
@@ -153,7 +155,7 @@ def parseFile(file: str):
           end_line = i + 2
           currently_in_docblock = False
           docblock = parseDocblock(lines, start_line, end_line, file)
-          results.append(docblock)
+          results["docblocks"].append(docblock)
 
   return results
 

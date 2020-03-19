@@ -10,12 +10,15 @@ class Generator:
 
   def parse_json(self, results):
     """Parse the given results in JSON format."""
-    self.results = results
-    output = []
+    self.results = results["docblocks"]
+    output = {
+        "docblocks": [],
+        "file": results["file"],
+    }
 
     # This results array contains all docblocks found in the file.
     for docblock in results:
-      output.append(docblock.render())
+      output["docblocks"].append(docblock.render())
 
     return json.dumps(output, indent=4)
 
