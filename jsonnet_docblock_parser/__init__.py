@@ -9,10 +9,13 @@ from .common import (
 
 from .parser import parseFile
 
+from .generator import Generator
+
 __all__ = [
     "parseFile",
     "Docblock",
     "DocblockParam",
     "DocblockReturns",
     "ParseError",
+    "Generator"
 ]
