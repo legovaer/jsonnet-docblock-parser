@@ -18,7 +18,9 @@ def test_file_loader():
 def test_test_parse_file():
   """Tests the parseFile method of the parser object."""
   docblocks = parseFile(TEST_FILE)
-  assert len(docblocks) == 1
+  assert len(docblocks) == 2
+  assert docblocks["file"] == TEST_FILE
+  docblocks = docblocks["docblocks"]
   assert len(docblocks[0].params) == 2
   assert docblocks[0].short_description == "Returns whether the string a is prefixed by the string b." # pylint: disable=line-too-long
   assert docblocks[0].long_description == "Returns whether the string a is prefixed by the string b.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis ex tellus, ac\n consectetur libero pretium in. Donec vehicula est nec odio cursus, non condimentum\n est cursus. Integer dui sapien, tincidunt non velit non, bibendum facilisis mi. Morbi" # pylint: disable=line-too-long
