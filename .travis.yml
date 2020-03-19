@@ -8,6 +8,5 @@ install:
   - pip install -U pylint
   - pip install -U pytest
 script:
-  - python setup.py
   - pylint jsonnet_docblock_parser
   - pytest
