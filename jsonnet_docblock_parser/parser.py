@@ -161,7 +161,7 @@ def parseFile(file: str):
 
 def _parse_code(text):
   pattern = re.findall(PATTERNS["code"], text)
-  return pattern[0] if len(pattern) > 0 else ""
+  return pattern[0] if pattern else ""
 
 def _is_part_of_docblock(line):
   pattern = re.compile(PATTERNS["docblock"]) # Look for /* * and /** and */
