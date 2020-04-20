@@ -17,7 +17,7 @@ class Generator:
     }
 
     # This results array contains all docblocks found in the file.
-    for docblock in results:
+    for docblock in results["docblocks"]:
       output["docblocks"].append(docblock.render())
 
     return json.dumps(output, indent=4)
