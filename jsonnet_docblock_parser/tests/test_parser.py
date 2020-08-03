@@ -38,3 +38,13 @@ def test_test_parse_file():
   assert docblocks[0].params[1].arg_name == "param"
   assert docblocks[0].params[1].type_name == "b"
   assert docblocks[0].params[1].is_optional == TRUE_FLAG
+
+
+NO_COMMENTS_FILE = "jsonnet_docblock_parser/tests/resources/no_comments.jsonnet"
+
+def test_no_comments():
+  """Tests if the parser parses files without comments."""
+  docblocks = parseFile(NO_COMMENTS_FILE)
+  assert len(docblocks) == 2
+  assert len(docblocks["docblocks"]) == 0
+  
